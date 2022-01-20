@@ -36,15 +36,15 @@ int main()
                     if (A+B>=5){
                         A = (A+B)-5;
                         B = 5;
-                        printf("Nilai A: %d\n", (A+B)-5);
+                        printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
                         printf("Masukkan perintah p: ");
                         scanf("%d", &p);
                     } else if (A+B<5){
-                        A = 0;
                         B = A+B;
+                        A = 0;
                         printf("Nilai A: %d\n", A);
-                        printf("Nilai B: %d\n", A+B);
+                        printf("Nilai B: %d\n", B);
                         printf("Masukkan perintah p: ");
                         scanf("%d", &p);
                     }
@@ -53,13 +53,13 @@ int main()
                         A = 3;
                         B = (A+B)-3;
                         printf("Nilai A: %d\n", A);
-                        printf("Nilai B: %d\n", (A+B)-3);
+                        printf("Nilai B: %d\n", B);
                         printf("Masukkan perintah p: ");
                         scanf("%d", &p);
                     } else if (A+B<=3){
                         A = A+B;
                         B = 0;
-                        printf("Nilai A: %d\n", A+B);
+                        printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
                         printf("Masukkan perintah p: ");
                         scanf("%d", &p);
