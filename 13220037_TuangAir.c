@@ -10,81 +10,63 @@ int main()
 
     /*ALGORITMA*/
     A = 0;
-    B = 0;
-    printf("Masukkan perintah p: ");
-    scanf("%d", &p);
+    B = 4;
 
-    while (true)
+    while(B != 4) // berhenti ketika B = 4
     {
-        if (p>=1 && p<=6){
-            if ((A != 4)||(B != 4)){
-                  if (p==1){
+        printf("Masukkan perintah p: ");
+        scanf("%d", &p);
+            if (p>=1 && p<=6){
+                if (p==1){ // isi A
                     A = 3;
-                    B = B;
                     printf("Nilai A: %d\n", A);
                     printf("Nilai B: %d\n", B);
-                    printf("Masukkan perintah p: ");
-                    scanf("%d", &p);
-                } else if (p==2){
-                    A = A;
+                } else if (p==2){ // isi B
                     B = 5;
                     printf("Nilai A: %d\n", A);
                     printf("Nilai B: %d\n", B);
-                    printf("Masukkan perintah p: ");
-                    scanf("%d", &p);
-                } else if (p==3){
+                } else if (p==3){ // tuang A ke B
                     if (A+B>=5){
                         A = (A+B)-5;
                         B = 5;
                         printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
-                        printf("Masukkan perintah p: ");
-                        scanf("%d", &p);
                     } else if (A+B<5){
                         B = A+B;
                         A = 0;
                         printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
-                        printf("Masukkan perintah p: ");
-                        scanf("%d", &p);
                     }
-                } else if (p==4){
+                } else if (p==4){ // tuang B ke A
                     if (A+B>3){
-                        A = 3;
                         B = (A+B)-3;
+                        A = 3;
                         printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
-                        printf("Masukkan perintah p: ");
-                        scanf("%d", &p);
                     } else if (A+B<=3){
                         A = A+B;
                         B = 0;
                         printf("Nilai A: %d\n", A);
                         printf("Nilai B: %d\n", B);
-                        printf("Masukkan perintah p: ");
-                        scanf("%d", &p);
                     }
                 } else if (p==5){
                     A = 0;
                     B = B;
                     printf("Nilai A: %d\n", A);
                     printf("Nilai B: %d\n", B);
-                    printf("Masukkan perintah p: ");
-                    scanf("%d", &p);
                 } else if (p==6){
                     A = A;
                     B = 0;
                     printf("Nilai A: %d\n", A);
                     printf("Nilai B: %d\n", B);
-                    printf("Masukkan perintah p: ");
-                    scanf("%d", &p);
                 }
+            } else {
+                printf("Tidak ada nomor perintah");
+                break;
             }
-        } else {
-        printf("Tidak ada nomor perintah");
-        break;
-        }
     }
+
+    printf("salah satu sudah mencapai 4 liter");
     return 0;
 }
 
