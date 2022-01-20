@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define true 1
+
+int main()
+{
+    /*KAMUS*/
+    int A, B, p;
+
+    // Nama: Muhammad Rafli Fadilah Yusmar
+    // NIM: 13220037
+
+    printf("Terdapat 2 buah wadah. Wadah pertama, yakni wadah A dapat menampung 3 Liter Air.");
+    printf("Sedangkan, wadah kedua, yakni wadah B dapat menampung 5 Liter Air. Pemilik ingin ");
+    printf("mendapati salah satu wadah mencapai 4 Liter dengan perintah-perintah berikut. \n");
+    printf(" Instruksi: \n");
+    printf(" Perintah 1: Mengisi penuh wadah A \n");
+    printf(" Perintah 2: Mengisi penuh wadah B \n");
+    printf(" Perintah 3: Menuangkan air dari wadah A ke B hingga wadah B penuh \n");
+    printf(" Perintah 4: Menuangkan air dari wadah B ke A hingga wadah A penuh \n");
+    printf(" Perintah 5: Mengosongkan wadah A \n");
+    printf(" Perintah 6: Mengosongkan wadah B \n");
+
+    // Jawaban: 1 3 1 3 6 3 1 3
+    // Jawaban: 2 4 5 4 2 4
+    // Hasil Algoritma koreksi Pak Ogin
+
+    /*ALGORITMA*/
+    A = 0;
+    B = 0;
+
+    while(B != 4) // berhenti ketika B = 4
+    {
+        printf("Masukkan perintah p: ");
+        scanf("%d", &p);
+            if (p>=1 && p<=6){
+                if (p==1){ // isi A
+                    A = 3;
+                    printf("Nilai A: %d\n", A);
+                    printf("Nilai B: %d\n", B);
+                } else if (p==2){ // isi B
+                    B = 5;
+                    printf("Nilai A: %d\n", A);
+                    printf("Nilai B: %d\n", B);
+                } else if (p==3){ // tuang A ke B
+                    if (A+B>=5){
+                        A = (A+B)-5;
+                        B = 5;
+                        printf("Nilai A: %d\n", A);
+                        printf("Nilai B: %d\n", B);
+                    } else if (A+B<5){
+                        B = A+B;
+                        A = 0;
+                        printf("Nilai A: %d\n", A);
+                        printf("Nilai B: %d\n", B);
+                    }
+                } else if (p==4){ // tuang B ke A
+                    if (A+B>3){
+                        B = (A+B)-3;
+                        A = 3;
+                        printf("Nilai A: %d\n", A);
+                        printf("Nilai B: %d\n", B);
+                    } else if (A+B<=3){
+                        A = A+B;
+                        B = 0;
+                        printf("Nilai A: %d\n", A);
+                        printf("Nilai B: %d\n", B);
+                    }
+                } else if (p==5){
+                    A = 0;
+                    B = B;
+                    printf("Nilai A: %d\n", A);
+                    printf("Nilai B: %d\n", B);
+                } else if (p==6){
+                    A = A;
+                    B = 0;
+                    printf("Nilai A: %d\n", A);
+                    printf("Nilai B: %d\n", B);
+                }
+            } else {
+                printf("Tidak ada nomor perintah");
+                break;
+            }
+    }
+
+    printf("salah satu sudah mencapai 4 liter");
+    return 0;
+}
+
+
