@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Nama / NIM: Muhammad Rafli Fadilah Yusmar / 13220037
+// Membuka, Membaca, dan Menutup File .txt dengan Bahasa C
+
+int main()
+{
+    /* KAMUS */
+    FILE * myfile;                          // Buat Pointer myfile
+    char line[150];                         // Menyimpan isi/konten dalam karakter
+
+    /* ALGORTIMA */
+    myfile = fopen("Favorite.txt", "r");    // Assign 'Buka file Favorite.txt read only' ke myfile
+
+    while(!feof(myfile)){                   // While loop myfile dari awal sampai akhir baris dari file (Membaca line satu per satu dari line 1 hingga line akhir
+        fgets(line, 150, myfile);           // Mendapat sebuah line dari file Favorite.txt
+        puts(line);                         // Menaruh line yang didapat dalam command line
+    }
+    fclose(myfile);                         // Menutup myfile
+
+    return 0;
+}
+
+// Maaf, Pak, Rafli masih belum bisa membuat program 'Menerima File Lalu Membandingkan Apakah File Tersebut PDF, JPG, atau Tidak Terdefinisi'.
+// Mungkin Rafli akan dapat pencerahan setelah dibahas nanti. Mohon maaf atas ketidakmampuan saya dalam memecahkan masalahnya. 
