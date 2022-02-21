@@ -3,6 +3,7 @@
 
 #define true 1
 
+// Latihan Program Menuang Air
 int main()
 {
     /*KAMUS*/
